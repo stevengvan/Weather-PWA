@@ -1,0 +1,276 @@
+:root {
+  font-family: "Inter", sans-serif;
+}
+@supports (font-variation-settings: normal) {
+  :root {
+    font-family: "Inter var", sans-serif;
+  }
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+*,
+::after,
+::before {
+  box-sizing: border-box;
+}
+body {
+  background-color: #2c2c2c;
+  padding: 1.5rem;
+  color: #fff !important;
+  font-weight: 700;
+}
+::-webkit-scrollbar {
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 0.5em;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #a9a9a9;
+  border-radius: 0.5em;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: #5a5a5a;
+}
+section {
+  margin-bottom: 1.5rem;
+}
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+nav > p {
+  margin-right: 2rem;
+}
+nav > p > img {
+  height: 25px;
+  width: auto;
+}
+
+#current-location {
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+.search-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.search-bar {
+  background-color: rgb(26, 26, 26);
+  padding: 0.5em 1.5em;
+  font-size: 16px;
+  border-radius: 1em;
+  z-index: 1;
+  width: 100%;
+  color: white;
+  border: none;
+}
+.input-entered {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.search-results-container {
+  background-color: rgb(26, 26, 26);
+  top: 3.5rem;
+  border-bottom-left-radius: 0.5em;
+  border-bottom-right-radius: 0.5em;
+  text-align: left;
+  position: absolute;
+  left: 0;
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+}
+.hide-results {
+  display: none;
+}
+.query-header > th {
+  border-bottom: 1px solid white;
+}
+.query-row:hover {
+  background-color: #5a5a5a;
+  cursor: pointer;
+}
+.query-row:focus-visible {
+  background-color: #5a5a5a;
+}
+.query-row > td {
+  word-wrap: break-word;
+  vertical-align: top;
+}
+.query-row > td > img {
+  width: 50px;
+  height: auto;
+}
+.current-weather {
+  max-width: 515px;
+}
+.main-info {
+  display: flex;
+  justify-content: space-between;
+}
+.temperature-area {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  justify-content: space-between;
+}
+.current-temperature {
+  font-size: 95px;
+  line-height: 100%;
+}
+.temperature-range {
+  font-size: 24px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.weather-icon {
+  height: 150px;
+  width: 150px;
+}
+.misc-info {
+  font-size: 20px;
+  display: none;
+}
+.header-forecast {
+  display: none !important;
+}
+.daily-forecast {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+}
+#day-container {
+  border: 5px solid #fff;
+  padding: 0.25em;
+  min-width: 100px;
+  text-align: center;
+  scroll-snap-align: start;
+}
+#day-container:not(:last-of-type) {
+  margin-right: 0.5em;
+}
+.day-title {
+  font-size: 16px;
+  margin-bottom: 0.5em;
+}
+.day-weather-icon {
+  height: 40px;
+  margin-bottom: 0.5em;
+  width: 40px;
+}
+.day-temperatures {
+  font-size: 13px;
+}
+#hourly-forecast {
+  border: 2.5px solid #fff;
+}
+#hourly-row {
+  height: 45px;
+  padding: 0.5em;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+#hourly-row:nth-child(2n) {
+  background-color: #585858;
+}
+.hourly-time {
+  font-size: 20px;
+  width: 65px;
+}
+.hourly-weather-icon {
+  height: 40px;
+  width: 40px;
+  flex: 1;
+}
+.hourly-info {
+  font-size: 16px;
+  flex: 2;
+}
+.part2 {
+  display: none;
+}
+@media screen and (min-width: 40rem) {
+  .search-container {
+    position: relative;
+  }
+  .search-results-container {
+    top: 2.2rem;
+  }
+  .part2 {
+    display: block;
+  }
+}
+@media screen and (min-width: 668px) {
+  .misc-info {
+    font-size: 22px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .header-forecast {
+    display: flex !important;
+  }
+  .not-header {
+    display: none;
+  }
+  .header {
+    display: flex;
+    align-items: stretch;
+    flex: 1;
+  }
+  .current-weather {
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 1;
+    margin-right: 2.5rem;
+  }
+  .main-info {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  .temperature-area {
+    flex-direction: row;
+  }
+  .temperature-range {
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100px;
+  }
+  .current-temperature {
+    font-size: 128px;
+  }
+  .weather-icon {
+    height: 206px;
+    width: 206px;
+  }
+  #day-container {
+    min-width: fit-content;
+    padding: 0.5em;
+  }
+  .day-title {
+    font-size: 35px;
+    margin-bottom: 0.25em;
+  }
+  .day-weather-icon {
+    height: 140px;
+    width: 140px;
+    margin-bottom: 1.5em;
+  }
+  .day-temperatures {
+    font-size: 26px;
+  }
+}
