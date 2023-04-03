@@ -23,4 +23,4 @@
 [[headers]]
     for = "/modules/*"
     [headers.values]
-        Content-Type = "text/javascript
+        Content-Type = "text/javascript"
