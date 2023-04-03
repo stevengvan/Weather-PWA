@@ -1,6 +1,6 @@
-import { getWeather } from "./js/getweather";
-import { searchcity } from "./js/searchcity";
-import { weatherIcons } from "./js/constants";
+import { getWeather } from "./modules/getweather";
+import { searchcity } from "./modules/searchcity";
+import { weatherIcons } from "./modules/constants";
 
 const searchBar = document.querySelector("input");
 searchBar.addEventListener("keyup", function (event) {
